@@ -62,7 +62,7 @@ const Homepage = () => {
   };
 
   const handleChange = (e) => {
-    const { id, name, value, type, checked } = e.target;
+    const { id, name } = e.target;
 
     if (name && name.startsWith("interests.")) {
       const interestKey = name.split(".")[1];
