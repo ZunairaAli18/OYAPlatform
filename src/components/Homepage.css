@@ -1,0 +1,132 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #003366;
+  margin: 0;
+  padding: 20px;
+  direction: inherit;
+  color: #003366;
+}
+
+#title {
+  font-weight: 900;
+  font-size: 44px;
+  margin: 0 0 16px 0;
+}
+
+.widget {
+  background: white;
+  max-width: 500px;
+  margin: auto;
+  direction: inherit;
+  text-align: start;
+  padding: 24px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box {
+  background-color: white;
+  height: 36px;
+  border-radius: 10px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.text {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  text-align: start;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.budget {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.search {
+  background: #003366;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.search:hover {
+  background: #022344;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  #title {
+    font-size: 26px;
+  }
+  .widget {
+    max-width: 100%;
+    padding: 16px;
+    border-radius: 20px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .box {
+    height: 40px;
+    font-size: 1rem;
+  }
+  .search {
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+/* RTL Support */
+body[dir="rtl"] {
+  text-align: right;
+}
+
+body[dir="rtl"] .header {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+body[dir="rtl"] .text,
+body[dir="rtl"] .budget {
+  text-align: right;
+}
+
+body[dir="rtl"] .box {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+body[dir="rtl"] .search {
+  text-align: center;
+}

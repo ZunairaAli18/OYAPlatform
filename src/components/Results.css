@@ -1,0 +1,54 @@
+.back-button-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  direction: ltr; /* force LTR for button */
+  margin-bottom: 16px;
+  padding-left: 10px;
+}
+
+.back-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: white;
+  color: darkblue;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+  background: lightblue;
+  color: darkblue;
+}
+
+.card-list-wrapper {
+  display: flex;
+  justify-content: center;
+  direction: inherit;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+  gap: 12px; /* space between cards */
+  padding: 0 10px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .back-button-wrapper {
+    justify-content: center; /* center button on small screens */
+    padding-left: 0;
+  }
+
+  .back-button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 18px;
+    padding: 14px 0;
+  }
+
+  .card-list-wrapper {
+    justify-content: center;
+    padding: 0 5px;
+    gap: 10px;
+  }
+}

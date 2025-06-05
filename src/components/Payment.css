@@ -1,0 +1,102 @@
+.payment-widget {
+  background-color: white;
+  max-width: 500px;
+  margin: 16px auto;
+  direction: inherit; /* Respect page direction */
+  text-align: start;  /* LTR or RTL auto alignment */
+  gap: 8px;
+  padding: 24px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+/* Back button */
+.back-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background: white;
+  color: darkblue;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.back-button:hover {
+  background: lightblue;
+  color: darkblue;
+}
+
+/* Payment options container */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.payment-option {
+  text-align: start;
+}
+
+.text {
+  font-size: 1.2rem;
+}
+
+/* Confirm and pay button */
+.confirmandpay {
+  background: #003366;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+.confirmandpay:hover {
+  background: #002244;
+}
+
+/* Price sections */
+.total-price {
+  margin: 15px 0;
+}
+
+.price-value {
+  margin: 5px 0;
+  background-color: aquamarine;
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+  .payment-widget {
+    max-width: 100%;
+    padding: 16px 12px;
+    margin: 12px 8px;
+    gap: 6px;
+  }
+
+  .back-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .confirmandpay {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .price-value {
+    font-size: 0.8rem;
+    padding: 3px 6px;
+  }
+}

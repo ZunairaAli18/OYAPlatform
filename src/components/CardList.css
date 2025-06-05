@@ -1,0 +1,113 @@
+.result-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 20px;
+  width: 320px;
+  max-width: 100%; /* allow shrinking on mobile */
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin-left: 0; /* reset big left margin for responsiveness */
+  text-align: start;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.ai-recommendation {
+  border-color: #007bff;
+  background-color: #eef5ff;
+}
+
+.result-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-right: 0; /* remove fixed right margin */
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.result-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* allow wrapping on narrow widths */
+  gap: 10px;
+}
+
+.result-details {
+  flex-grow: 1;
+  min-width: 180px; /* prevent shrinking too much */
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap; /* wrap if needed on small screens */
+  gap: 10px;
+}
+
+.stars {
+  color: gold;
+  margin: 4px 0;
+  flex-shrink: 0;
+}
+
+.image-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #ddd;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.select-button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+  width: 100%;
+  max-width: 150px;
+  box-sizing: border-box;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .result-card {
+    width: 100%;
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  .cards {
+    gap: 12px;
+    padding: 0 5px;
+  }
+
+  .result-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .top-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .image-placeholder {
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .select-button {
+    max-width: 100%;
+  }
+}
