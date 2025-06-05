@@ -51,7 +51,7 @@ const Payment = () => {
       return;
     }
 
-    alert(language === 'ar' ? 'جارٍ معالجة الدفع...' : 'Processing payment...');
+    alert(language === 'ar' ? 'تم الدفع...' : 'Payment done...');
     navigate("/");
   };
 
@@ -127,7 +127,7 @@ const Payment = () => {
               {language === 'ar' ? 'السعر الإجمالي' : 'Total Price'}
             </label>
             <p className="price-value">
-              {totalPrice} {language === 'ar' ? 'ر.س' : 'SAR'}
+              {selectedCard.price} {language === 'ar' ? 'ر.س' : 'SAR'}
             </p>
           </div>
 
