@@ -33,7 +33,10 @@
   padding: 0 10px;
   box-sizing: border-box;
 }
-
+.card-image{
+  height: 70px;
+  width: 70px;
+}
 .result-content {
   display: flex;
   justify-content: space-between;
@@ -49,10 +52,22 @@
 .top-row {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap; /* wrap if needed on small screens */
-  gap: 10px;
+  align-items: center;
+  gap: 16px;
 }
+
+.place-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.place-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 
 .stars {
   color: gold;
@@ -60,13 +75,6 @@
   flex-shrink: 0;
 }
 
-.image-placeholder {
-  width: 60px;
-  height: 60px;
-  background-color: #ddd;
-  margin-left: 10px;
-  flex-shrink: 0;
-}
 
 .select-button {
   margin-top: 10px;

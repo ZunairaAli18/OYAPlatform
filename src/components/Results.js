@@ -1,14 +1,15 @@
-import React from "react";
+import react from 'react';
 import './Results.css';
 import CardList from "./CardList";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Results = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const formData = location.state?.formData || {}; 
   const language = location.state?.language || 'en'; // fallback to 'en' if not passed
-
+ 
   const handleBack = () => {
     navigate("/");
   };
@@ -22,7 +23,7 @@ const Results = () => {
 </div>
 
        <div className="card-list-wrapper">
-    <CardList language={language} />
+   <CardList language={language} formData={formData} />
   </div>
     </div>
   );

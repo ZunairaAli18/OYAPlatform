@@ -1,83 +1,60 @@
 import React from 'react';
 import './CardList.css';
-import { useNavigate } from 'react-router-dom';
+import cards from '../data/cards.json';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const cards = [
-  {
-    title: 'AI Recommendation',
-    title_ar: 'موصى به من الذكاء الاصطناعي',
-    name: 'Name',
-    name_ar: 'الاسم',
-    rating: 5,
-    price: '$199',
-    description1: 'Short Description',
-    description1_ar: 'وصف قصير',
-    description2: 'Short Description',
-    description2_ar: 'وصف قصير',
-    isAI: true,
-  },
-  {
-    title: 'Option 2',
-    title_ar: 'الخيار 2',
-    name: 'Option 2',
-    name_ar: 'الخيار 2',
-    rating: 2,
-    price: '$99',
-    description1: 'Short Description',
-    description1_ar: 'وصف قصير',
-    description2: 'Short Description',
-    description2_ar: 'وصف قصير',
-    isAI: false,
-  },
-  {
-    title: 'Option 3',
-    title_ar: 'الخيار 3',
-    name: 'Option 3',
-    name_ar: 'الخيار 3',
-    rating: 4,
-    price: '$149',
-    description1: 'Another short description',
-    description1_ar: 'وصف قصير آخر',
-    description2: 'More details here',
-    description2_ar: 'مزيد من التفاصيل هنا',
-    isAI: false,
-  },
-  {
-    title: 'Option 4',
-    title_ar: 'الخيار 4',
-    name: 'Option 4',
-    name_ar: 'الخيار 4',
-    rating: 3,
-    price: '$129',
-    description1: 'Brief info about option 4',
-    description1_ar: 'معلومات موجزة عن الخيار 4',
-    description2: 'Additional info for option 4',
-    description2_ar: 'معلومات إضافية للخيار 4',
-    isAI: false,
-  },
-];
-
-const CardList = ({ language }) => {
+const CardList = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const formData = location.state?.formData || {};
+  const language = location.state?.language || 'en';
 
-  const handleSearch = () => {
-    navigate("/payment",{ state: { language } });
+  const handleSearch = (card) => {
+    navigate('/payment', { state: { language, formData, selectedCard: card } });
   };
 
+ const filteredCards = cards.filter((card) => {
+  console.log('formData:', formData);
+console.log('formData.destination:', formData.destination);
+
+  return formData.destination
+    ? card.destination?.toLowerCase() === formData.destination.toLowerCase()
+    : true;
+});
+
+
   return (
-    <div className='cards' dir={language === 'ar' ? 'rtl' : 'ltr'}>
-      {cards.map((card, index) => (
-        <div
-          className={`result-card ${card.isAI ? 'ai-recommendation' : ''}`}
-          key={index}
-        >
-          {card.isAI && <h3>{language === 'ar' ? card.title_ar : card.title}</h3>}
+  <div className="cards" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    {filteredCards.length === 0 ? (
+      <div className="no-results">
+        {language === 'ar' ? 'لم يتم العثور على نتائج' : 'No results found'}
+      </div>
+    ) : (
+      filteredCards.map((card, index) => (
+        <div className={`result-card ${card.isAI ? 'ai-recommendation' : ''}`} key={index}>
           <div className="result-content">
             <div className="result-details">
+        
               <div className="top-row">
-                <strong>{language === 'ar' ? card.name_ar : card.name}</strong>
-                <span>{card.price}</span>
-              </div>
+  {language === 'ar' ? (
+    <>
+      <img src={card.imageUrl} alt={card.name} className="place-image" />
+      <div className="place-info">
+        <strong>{card.destination_ar}</strong>
+        <strong>{card.name_ar}</strong>
+      </div>
+    </>
+  ) : (
+    <>
+      <div className="place-info">
+        <strong>{card.destination}</strong>
+        <strong>{card.name}</strong>
+      </div>
+      <img src={card.imageUrl} alt={card.name} className="place-image" />
+    </>
+  )}
+</div>
+
               <div className="stars">
                 {'★'.repeat(card.rating)}{'☆'.repeat(5 - card.rating)}
               </div>
@@ -86,13 +63,14 @@ const CardList = ({ language }) => {
             </div>
             <div className="image-placeholder" />
           </div>
-          <button className="select-button" onClick={handleSearch}>
+          <button className="select-button" onClick={() => handleSearch(card)}>
             {language === 'ar' ? 'اختيار' : 'Select'}
           </button>
         </div>
-      ))}
-    </div>
-  );
+      ))
+    )}
+  </div>
+);
 };
 
 export default CardList;

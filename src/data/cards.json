@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Burj Ul Khalifa",
+  "name_ar": "برج خليفة",
+  "destination": "Dubai",
+  "destination_ar": "دبي",
+    "rating": 5,
+    "price": "$199",
+    "description1": "Short Description",
+    "description1_ar": "وصف قصير",
+    "description2": "Short Description",
+    "description2_ar": "وصف قصير",
+    "imageUrl":"https://lh3.googleusercontent.com/gpms-cs-s/AB8u6HZ5dfGEI49OwQt5oYkcpU8SxPp_OWz__D0ezCWek8tHqYnmIxjoIQu6f5v3lQfYgBybE5wIFE4r4gWwoCXYhNB7UF1NGLHru2VHAByh4-V1AM-3Sv9prgBCCYhfxzN-3r7Fd6r2=s220-w165-h220-n-k-no",
+    "isAI": true
+  },
+  {
+     "name": "Burj Al Arab",
+  "name_ar": "برج العرب",
+  "destination": "Dubai",
+  "destination_ar": "دبي",
+    "rating": 2,
+    "price": "$99",
+    "description1": "Short Description",
+    "description1_ar": "وصف قصير",
+    "description2": "Short Description",
+    "description2_ar": "وصف قصير",
+    "imageUrl":"https://lh3.googleusercontent.com/p/AF1QipPlizicQUiaeWIAm68u9snkGTNv4VBpm8NDytA2=s294-w294-h220-n-k-no",
+    "isAI": false
+  },
+  {
+     "name": "Dubai Miracle Garden",
+  "name_ar": "حديقة دبي المعجزة",
+  "destination": "Dubai",
+  "destination_ar": "دبي",
+    "rating": 4,
+    "price": "$149",
+    "description1": "Another short description",
+    "description1_ar": "وصف قصير آخر",
+    "description2": "More details here",
+    "description2_ar": "مزيد من التفاصيل هنا",
+    "imageUrl":"https://lh3.googleusercontent.com/gpms-cs-s/AB8u6HYNM2KTeu2_XacGS-Dkxpl2bzU9SuC9_oviz5T8rHOPgsNc_xpRl3cMgfiK-9v3grDUli-N8ev14VZdNNwf_xPhgikUsRAXolBomI1nc7Uhv8-6rXfKC0d7VvjwgsCAObqXbQ7n3g=s294-w294-h220-n-k-no",
+    "isAI": false
+  },
+  {
+     "name": "The Egyptian Museum",
+  "name_ar": "المتحف المصري",
+  "destination": "Cairo",
+  "destination_ar": "القاهرة",
+    "rating": 3,
+    "price": "$129",
+    "description1": "Brief info about option 4",
+    "description1_ar": "معلومات موجزة عن الخيار 4",
+    "description2": "Additional info for option 4",
+    "description2_ar": "معلومات إضافية للخيار 4",
+    "imageUrl":"https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr3jrjh-RyhKyXYuJfAQRS0P_9FNavOMAxOrR58ToWWU90Iki6mx0f0OZcvPzHLFqCo0pUy38QkehT2QOeY8JtlAg2ehRc2fFGe1odXgr8soH64uAKd3j8_i6S6aDMpU1aWUa5Z=s1360-w1360-h1020-rw",
+    "isAI": false
+  }
+]

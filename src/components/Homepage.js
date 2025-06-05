@@ -58,11 +58,12 @@ const Homepage = () => {
     alertMsg('Please select number of guests', 'يرجى اختيار عدد الضيوف');
     return;
   }
+  console.log(formData.destination);
     navigate("/results",{ state: { language, formData } });
   };
 
   const handleChange = (e) => {
-    const { id, name } = e.target;
+    const { id, name,value,type,checked } = e.target;
 
     if (name && name.startsWith("interests.")) {
       const interestKey = name.split(".")[1];
@@ -85,11 +86,12 @@ const Homepage = () => {
       return;
     }
 
-    const key = id || name;
+    const key = id || name ;
     setFormData((prev) => ({
       ...prev,
       [key]: value,
     }));
+   
   };
 
   return (
